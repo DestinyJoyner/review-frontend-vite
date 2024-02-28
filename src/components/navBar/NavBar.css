@@ -1,0 +1,22 @@
+.navBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    background-color: violet;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.navBar a {
+    font-size: 20px;
+    color: navy;
+    font-weight: 600;
+}
+
+.navBar a:hover {
+    color: yellow;
+}
+

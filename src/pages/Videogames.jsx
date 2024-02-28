@@ -1,5 +1,7 @@
+import VideogameIndex from "../components/videogameIndex/VideogameIndex"
+
 export default function Videogames () {
     return (
-        <h1>Index Page</h1>
+        <VideogameIndex />
     )
 }

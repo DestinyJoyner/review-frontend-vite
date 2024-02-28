@@ -1,0 +1,35 @@
+.videogameIndex {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 6vh;
+    column-gap: 10vh;
+    height: 90%;
+}
+
+.videogameIndex h2 {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 30px;
+    background-color: fuchsia;
+}
+
+.videogameIndex_gameCard {
+    border: 1px solid grey;
+    border-radius: 5%;
+    background-color: rgba(17, 17, 17, 0.744);
+    color: rgba(255, 0, 255, 0.97);;
+    height: 100%;
+    padding: 2vh 0;
+    font-size: 20px;
+    width: 300px;
+}
+
+.videogameIndex_gameCard h3 {
+    font-family: monospace;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.videogameIndex_gameCard img{
+    height: 150px;
+}
