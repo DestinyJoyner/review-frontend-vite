@@ -27,7 +27,7 @@ export default function VideogameIndex () {
  },[])
 
     return (
-        <div className="videogameIndex">
+        <div className="videogameIndex gridCenter">
             <h2>Browse Videogames!</h2>
             {
                 allVideogames.map(videogameObj => 
