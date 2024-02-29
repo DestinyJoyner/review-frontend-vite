@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom";
 import { GiStarsStack } from "react-icons/gi";
 import "./VideogameIndex.css"
 
@@ -31,15 +32,19 @@ export default function VideogameIndex () {
             <h2>Browse Videogames!</h2>
             {
                 allVideogames.map(videogameObj => 
-                <div className="videogameIndex_gameCard gridCenter">
+                <Link to = {`/videogames/${videogameObj.id}`}
+                className="videogameIndex_gameCard gridCenter">
                     <img src={videogameObj.game_image} alt={videogameObj.title} />
+
                     <h3>{videogameObj.title}</h3>
+
                     <span>{videogameObj.game_system}</span>
-                    <span>{videogameObj.favorite ? <GiStarsStack color={"gold"} size={"30px"}/> : null }
+
+                    <span>{videogameObj.favorite ? <GiStarsStack color={"gold"} size={"30px"}/> : null}
                     </span>
-                 
+                 {/* <span className={videogameObj.favorite ? "green" : "red"}>{ videogameObj.favorite ? "Yes" : "No"} </span>  */}
                     
-                </div>
+                </Link>
                 )
             }
         </div>

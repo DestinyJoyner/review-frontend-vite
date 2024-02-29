@@ -1,0 +1,40 @@
+.videogameShow {
+    border: 2px solid grey;
+    padding: 20px;
+    border-radius: 20px;
+    row-gap: 20px;
+    background-color: rgba(56, 56, 56, 0.625);
+}
+
+.videogameShow h2 {
+    font-size: 30px;
+    color: lime;
+}
+
+.videogameShow span {
+    font-size: 24px;
+    color: aqua;
+}
+
+.videogameShow svg {
+    height: 5em;
+    width: 5em;
+}
+
+.videogameShow_buttons button, .videogameShow_buttons div{
+    height: 50px;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.videogameShow_buttons div {
+background-color: grey;
+}
+
+
+.videogameShow_buttons div a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
