@@ -12,6 +12,8 @@
     font-size: 30px;
     background-color: fuchsia;
     border-radius: 20px;
+    color: lime;
+    text-shadow: 5px 5px black;
 }
 
 .videogameIndex_gameCard {
@@ -23,6 +25,7 @@
     padding: 2vh 0;
     font-size: 20px;
     width: 300px;
+    text-decoration: none;
 }
 
 .videogameIndex_gameCard:hover {

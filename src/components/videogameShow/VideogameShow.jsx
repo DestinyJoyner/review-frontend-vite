@@ -13,7 +13,6 @@ export default function VideogameShow() {
   const navigate = useNavigate()
 
 //   handleDelete
-
 function handleDelete () {
     axios.delete(`${API}/videogame/${id}`)
     .then(res => navigate("/videogames"))
@@ -30,22 +29,33 @@ function handleDelete () {
   return (
     <div className="videogameShowPage">
     <div className="videogameShow gridCenter">
-      <h2>{videogameDetails.title}</h2>
-      <img src={videogameDetails.game_image} alt={videogameDetails.title} />
-      <span>{videogameDetails.game_system}</span>
 
-      {videogameDetails.favorite ? <GiStarsStack color={"gold"} /> : null}
+      <h2>{videogameDetails.title}</h2>
+
+      <img 
+      src={videogameDetails.game_image} 
+      alt={videogameDetails.title} />
+
+      <span>
+        {videogameDetails.game_system} ({videogameDetails.release_year})
+      </span>
+
+      {
+      videogameDetails.favorite &&<GiStarsStack color={"gold"} />}
+
     </div>
 
     <aside className="videogameShow_buttons">
-        <div className="gridCenter">
-        <Link to = {`/videogames/${id}/edit`}>Edit</Link>
-        </div>
       
-
+        <Link 
+        className="gridCenter" 
+        to = {`/videogames/${id}/edit`}>Edit</Link>
+        
         <button
         onClick={() => handleDelete()}>Delete</button>
+
     </aside>
+    
     </div>
   );
 }

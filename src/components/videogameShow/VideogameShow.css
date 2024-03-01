@@ -38,26 +38,21 @@
     row-gap: 8vh;
 }
 
-.videogameShow_buttons button, .videogameShow_buttons div a{
-    text-align: center;
-    color: yellow;
-    font-size: 26px;
-}
-
-.videogameShow_buttons button, .videogameShow_buttons div {
+.videogameShow_buttons button, .videogameShow_buttons a {
     height: 60px;
     width: 200px;
     background-color: navy;
     border-radius: 30px;
+    text-align: center;
+    color: yellow;
+    font-size: 26px;
+    text-decoration: none;
 }
 
-.videogameShow_buttons button:hover, .videogameShow_buttons div:hover, .videogameShow_buttons div a:hover {
+
+.videogameShow_buttons button:hover, .videogameShow_buttons a:hover {
     background-color: lime;
     color: navy;
 }
 
-.videogameShow_buttons div a {
-    height: fit-content;
-    text-decoration: none;
-}
 

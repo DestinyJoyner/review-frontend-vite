@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Form.css";
@@ -11,7 +11,7 @@ export default function Form() {
     release_year: "",
     favorite: false,
     game_system: "",
-    game_image: "",
+    game_image: "https://www.mooreseal.com/wp-content/uploads/2013/11/dummy-image-square.jpg",
   });
 
   const navigate = useNavigate();
@@ -70,6 +70,18 @@ export default function Form() {
       .then((res) => navigate(`/videogames/${res.data.id}`))
       .catch((err) => console.log(err));
   }
+
+  useEffect(() => {
+    if(form.game_image=== ""){
+      setForm((currentState) => {
+        return {
+          ...currentState,
+          game_image : "https://www.mooreseal.com/wp-content/uploads/2013/11/dummy-image-square.jpg"
+        }
+      })
+    }
+  },[form.game_image])
+
 
   return (
     <div className="formPage flexContainer">
