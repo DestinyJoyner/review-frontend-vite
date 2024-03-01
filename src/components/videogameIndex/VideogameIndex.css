@@ -1,12 +1,12 @@
 .videogameIndex {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     row-gap: 6vh;
     column-gap: 10vh;
-    height: 90%;
+  
 }
 
 .videogameIndex h2 {
-    grid-column: span 2;
+    grid-column: span 3;
     width: 80%;
     text-align: center;
     font-size: 30px;

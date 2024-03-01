@@ -28,7 +28,7 @@ function handleDelete () {
   }, [id]);
 
   return (
-    <>
+    <div className="videogameShowPage">
     <div className="videogameShow gridCenter">
       <h2>{videogameDetails.title}</h2>
       <img src={videogameDetails.game_image} alt={videogameDetails.title} />
@@ -46,6 +46,6 @@ function handleDelete () {
         <button
         onClick={() => handleDelete()}>Delete</button>
     </aside>
-    </>
+    </div>
   );
 }

@@ -1,3 +1,10 @@
+.videogameShowPage {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    column-gap: 5vh;
+    align-items: center;
+}
+
 .videogameShow {
     border: 2px solid grey;
     padding: 20px;
@@ -11,6 +18,10 @@
     color: lime;
 }
 
+.videogameShow img {
+    height: 300px;
+}
+
 .videogameShow span {
     font-size: 24px;
     color: aqua;
@@ -21,20 +32,32 @@
     width: 5em;
 }
 
-.videogameShow_buttons button, .videogameShow_buttons div{
-    height: 50px;
+.videogameShow_buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8vh;
+}
+
+.videogameShow_buttons button, .videogameShow_buttons div a{
+    text-align: center;
+    color: yellow;
+    font-size: 26px;
+}
+
+.videogameShow_buttons button, .videogameShow_buttons div {
+    height: 60px;
     width: 200px;
-    margin-right: 20px;
+    background-color: navy;
+    border-radius: 30px;
 }
 
-.videogameShow_buttons div {
-background-color: grey;
+.videogameShow_buttons button:hover, .videogameShow_buttons div:hover, .videogameShow_buttons div a:hover {
+    background-color: lime;
+    color: navy;
 }
-
 
 .videogameShow_buttons div a {
+    height: fit-content;
     text-decoration: none;
-    color: black;
-    font-size: 20px;
 }
 

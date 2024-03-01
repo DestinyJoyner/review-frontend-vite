@@ -1,0 +1,75 @@
+.formPage {
+    background-color: navy;
+    align-items: center;
+    column-gap: 5vh;
+    padding-right: 3vh;
+}
+
+.formPage_image {
+max-height: 300px;
+border: 1px solid aqua;
+border-radius: 20px;
+color: white;
+padding: 5px;
+}
+
+.form {
+    row-gap: 5vh;
+    padding: 8vh;
+}
+
+.form label {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.form input[type="text"], .form input[type="url"] {
+    height: 30px;
+    width: 300px;
+    font-size: 20px;
+}
+
+.form input[type="checkbox"] {
+    accent-color: aqua;
+    height: 3em;
+    width: 3em;
+}
+
+.form input[type="text"] {
+    background-color: violet;
+}
+
+.form input[type="url"]:valid:not(:placeholder-shown){
+    background-color: green;
+}
+
+.form input[type="url"]:invalid {
+    background-color:red;
+}
+
+.form select {
+    height: 40px;
+    width: 200px;
+    padding: 3px;
+}
+
+.formSubmitButton {
+    all: unset;
+    height: 80px;
+    border: 2px solid yellow;
+    width: 320px;
+    text-align: center;
+    color: yellow;
+    font-size: 25px;
+    border-radius: 30px;
+    background-color: fuchsia;
+}
+
+.formSubmitButton:hover {
+    cursor: pointer;
+    background-color: lime;
+    color: darkblue;
+}

@@ -1,5 +1,5 @@
-export default function New () {
-   return (
-    <h1>New Page</h1>
-   ) 
+import Form from "../components/form/Form";
+
+export default function New() {
+  return <Form />;
 }

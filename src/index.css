@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Mario";
+    src: url("./assets/fonts/Mario-Esq.ttf");
+}
+
+*{
+    font-family: "Mario";
+}
