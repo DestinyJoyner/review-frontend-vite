@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./Form.css";
 
@@ -13,8 +13,10 @@ export default function Form() {
     game_system: "",
     game_image: "https://www.mooreseal.com/wp-content/uploads/2013/11/dummy-image-square.jpg",
   });
-
   const navigate = useNavigate();
+  // for edit form
+  const { id } = useParams()
+  // console.log(id, "id")
 
   // handle text input
   function handleTextInput(event) {
@@ -57,11 +59,9 @@ export default function Form() {
 
   const gameDates = listGameDates();
 
-  // on submit
-
+  // on submit post new
   function submitNewVideogame(event) {
     event.preventDefault();
-
     axios
       .post(`${API}/videogame`, {
         ...form,
@@ -70,6 +70,18 @@ export default function Form() {
       .then((res) => navigate(`/videogames/${res.data.id}`))
       .catch((err) => console.log(err));
   }
+
+  // on submit edit
+    function submitEditForm (event) {
+      event.preventDefault()
+
+      axios.put(`${API}/videogame/${id}`, {
+        ...form,
+        release_year: Number(form.release_year)
+      })
+      .then(res => navigate(`/videogames/${id}`))
+      .catch(err => console.log(err))
+    }
 
   useEffect(() => {
     if(form.game_image=== ""){
@@ -82,12 +94,21 @@ export default function Form() {
     }
   },[form.game_image])
 
+  useEffect(() => {
+    if(id){
+      axios.get(`${API}/videogame/${id}`)
+      .then(res => setForm(res.data))
+      .catch(err => console.log(err))
+    }
+  }, [])
+ 
 
   return (
     <div className="formPage flexContainer">
       <form
         onSubmit={(e) => {
-          submitNewVideogame(e);
+          id ? submitEditForm(e) :
+          submitNewVideogame(e)
         }}
         className="form gridCenter"
       >
@@ -113,6 +134,7 @@ export default function Form() {
           <input
             type="text"
             id="game_system"
+            placeholder="PS5, Nintendo DS, PC, Xbox"
             value={form.game_system}
             onChange={(e) => handleTextInput(e)}
           />
@@ -142,7 +164,7 @@ export default function Form() {
             onChange={(e) => handleTextInput(e)}
             value={form.release_year}
           >
-            <option value="">Please Select One:</option>
+            <option value="">Select a Year</option>
 
             {gameDates.map((el) => (
               <option value={el}>{el}</option>
@@ -168,7 +190,7 @@ export default function Form() {
         <input 
         className="formSubmitButton"
         type="submit" 
-        value="Add Videogame"
+        value={ id ? "Edit Videogame":"Add Videogame"}
          />
       </form>
 
